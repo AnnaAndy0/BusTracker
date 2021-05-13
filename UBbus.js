@@ -64,7 +64,7 @@ const busStops = [
       marker.setLngLat(busStops[counter]);
       counter++;
       move();
-    }, 3000);
+    }, 720000);
   }
   
   
