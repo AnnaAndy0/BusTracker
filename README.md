@@ -1,7 +1,7 @@
 <h4> Real Time Bus Tracker Project </h4>
 
 <h5> Description: </h5>
-<p>The Real Time Bus Tracker, was a learning activity used in a course I am currently enrolled in.This project currently allows the user to see the bus stops between The University at Buffalo, and Downtown Buffalo. Upon opening, a map of Buffalo, NY is displayed, along with the bus route highlighted in blue, and the UB Bulls logo marking both the UB campus bus stop, and the final destination downtown. There is a button displayed in the top left corner of the screen, when the button is clicked the user gets an animated look at the bus route and stops along the way. </p>
+<p>The Real Time Bus Tracker, was a learning activity used in a course I am currently enrolled in. This project currently allows the user to see the bus stops between The University at Buffalo, and Downtown Buffalo. Upon opening, a map of Buffalo, NY is displayed, along with the bus route highlighted in blue, and the UB Bulls logo marking both the UB campus bus stop, and the final destination downtown. There is a button displayed in the top left corner of the screen, when the button is clicked the user gets an animated look at the bus route and stops along the way. </p>
 
 <h4> Installation: </h4>
 <p> To check out the Bus Tracker yourself, save the UBbus files to your device. After, simply open up the "UBbus.html" file in your browser, and tap the button in the upperleft to view the route. </p>
