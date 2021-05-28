@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Live Bus Tracker MIT/Harvard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
+  <script src="mapanimation.js" async></script>
+  
+</head>
+
+<body>
+  
+  <div id="markers"></div>
+  <div id="map-container">
+<div id="map"></div>
+<button style="font-size: 2em" =>
+    MBTA Live Bus Tracker
+</button>
+  </div>
+
+
+  <script>
+
+      var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-71.09310671338599, 42.35943863379832]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'MIT'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-71.11753032886479, 42.37323950783375]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Harvard'
+    }
+  }]
+};
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5uYWFuZHkwIiwiYSI6ImNrb2xwNGlqczAxOW0ybm12NjBkMnVuY2QifQ.AWKZ4MSBRXtHXTl7y5vYpQ';
+
+    if(window.innerWidth > 700){
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-71.08999647493374, 42.351838835631156], 
+      zoom: 12
+      });
+    }
+    
+    if(window.innerWidth <= 700){
+      var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-71.08999647493374, 42.351838835631156], 
+      zoom: 12
+      });
+    }
+    
+    map.on('load', function () {
+    map.addSource('route', {
+        'type': 'geojson',
+        'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [
+                [-71.08273521020034, 42.33098969269522],
+                [-71.08071316904753, 42.33321531481037,],
+                [-71.07953301559813, 42.33207321188288],
+                [-71.07623697778186, 42.33178531460581],
+                [-71.07366752469724, 42.33372537837073],
+                [-71.07506709858332, 42.33491059526546],
+                [-71.07689162669787, 42.33690254210454],
+                [-71.08025471137239, 42.33961364288265], 
+                [-71.08331727113065, 42.341747288483994],
+                [-71.0842480288658, 42.34262829559739], 
+                [-71.08657725562014, 42.345562325120554],
+                [-71.0880923556622, 42.34812333939191],
+                [-71.08925632203396, 42.3509622898971],
+                [-71.09310671338599, 42.35943863379832],
+                [-71.09582885568454, 42.36077521861179],
+                [-71.09951972884872, 42.36287138341434],
+                [-71.10338254226505, 42.365485215105],
+                [-71.10581292868704, 42.366957417869656],
+                [-71.1078327844863, 42.3680822681837],
+                [-71.11071935564988, 42.36945920281814],
+                [-71.11300872886272, 42.370440420161906], 
+                [-71.11533881342221, 42.37222978376406],
+                [-71.11753032886479, 42.37323950783375],
+
+            ]       
+        }
+    }
+});
+map.addLayer({
+    'id': 'route',
+    'type': 'line',
+    'source': 'route',
+    'layout': {
+        'line-join': 'round',
+        'line-cap': 'round'
+    },
+    'paint': {
+        'line-color': 'maroon',
+        'line-width': 4
+        }
+    });
+});
+
+
+  
+  </script>
+ 
+</body>
+</main>
+</html>
